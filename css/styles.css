@@ -1,0 +1,222 @@
+﻿/* Reseteamos los tags HTML y HTML5  */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+/* Incluimos los valores por defecto de las fuentes para texto */
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 68px;
+	line-height: 72px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 42px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 22px;
+	line-height: 30px;
+}
+
+body {
+	font: 16px/24px Georgia, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* Marcamos el ancho de nuestra página por defecto. Serán 1000 pixeles */
+
+body {
+	width: 1000px;
+	padding: 72px 48px 84px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFFFFF;
+	color: #888888;
+	-webkit-text-size-adjust: 100%; /*  Para que Safari no haga auto-zoom*/
+}
+
+/* Las diferentes sections las definimos para que su posición sea relativa y que el color de fondo sea un color expresado 
+como gradiente mediante las posibilidades que nos ofrece CSS 3 
+Importante!!. Definimos los border-box (border de las setions), de manera que no ocupen espacio
+y se conviertan en un quebradero de cabeza adicional. Por tanto podremos calcular nuestras columnas
+basándose en el 100% de espacio como el total 
+*/
+
+section {
+	background: #feffff; /* Para antiguos navegadores */
+	background: -moz-linear-gradient(top, #feffff 0%, #d2ebf9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(100%,#d2ebf9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #feffff 0%,#d2ebf9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #feffff 0%,#d2ebf9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #feffff 0%,#d2ebf9 100%); /* IE10+ */
+	background: linear-gradient(top, #feffff 0%,#d2ebf9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 ); /* IE6-9 */
+	position:relative;
+    border: 2px solid #888888;
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	     box-sizing: border-box; 
+	    -moz-border-radius: 5px;
+         border-radius: 5px;   
+        -moz-box-shadow: 10px 10px 5px #888;
+        -webkit-box-shadow: 10px 10px 5px #888;
+        box-shadow: 10px 10px 5px #888;	
+}
+
+/* Cuando pasamos el ratón sobre una sección se modifica la opacity al 50 por ciento */
+
+section:hover { opacity:0.5; }
+
+
+/* Cada uno de los párrafos y títulos tendran un padding del 4% respecto a la sección exterior que los contiene */
+
+h2, p { padding:4%; }
+
+/* Define los margenes entre cada fila y la fila de encima */
+
+.margin-top { margin-top: 4%; }
+
+/* Aquí definiremos el ancho que ocupa cada una de las columnas de nuestro diseño por defecto */
+
+.header-left, .header-right, .main-left, .main-right  
+{
+    width: 46%; 
+    float:left;
+    margin-left: 2%; 
+    margin-right: 2%;
+}
+
+.submain-left, .submain-middle-left, .submain-middle-right, .submain-right   {
+    width: 21%; 
+    float:left;  
+    margin-left: 2%; 
+    margin-right: 2%;
+    height:200px;
+    overflow:auto;
+}
+
+.navigation, .footer { 
+    width: 96%; 
+    float:left;
+    padding: 2%; 
+    margin-left:2%;
+    margin-right:2%;
+}
+
+nav a  {
+    display:inline-block; 
+    color: #999999;
+    width: 16%; 
+    float:left;  
+    margin-left: 2%; 
+    margin-right: 2%;        
+}
+
+nav a:hover { 
+    color: red; 
+    font-weight:bold; 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	body {
+		width: 768px;
+		padding: 48px 28px 60px;
+	}
+	
+	.submain-left, .submain-middle-left, .submain-middle-right, .submain-right   {
+        width: 46%; 
+    }
+	
+}
+
+/* 
+   Con esta media query, se redefinen los estilos de la página para que se muestren en móviles. 
+   El ancho para el que se redefinirán los estilos mediante esta media query está marcado por un máximo de 767px
+*/
+
+@media only screen and (max-width: 767px) {
+	
+	body {
+		width: 320px;
+		padding: 48px 34px 60px;
+	}
+	
+	.header-left, .header-right, .main-left, .main-right  {
+        width: 96%;         
+    }
+    
+    .header-right { margin-top:4%; }
+
+    .submain-left, .submain-middle-left, .submain-middle-right, .submain-right   {
+        width: 96%; 
+    }	
+
+    nav a:nth-child(4), nav a:nth-child(5) {
+        display: none;      
+    }
+    
+    nav a {
+        width: 29%;
+    }    
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	body {
+		width: 480px;
+		padding: 36px 22px 48px;
+	}
+	
+    .submain-left, .submain-middle-left, .submain-middle-right, .submain-right   {
+        width: 46%; 
+    }		
+    
+    nav a:last-child  {
+        display: none;      
+    }
+    
+    nav a:nth-child(4) {
+        display: inline-block;      
+    }
+
+    nav a {
+        width: 21%;
+    }
+
+}
